@@ -41,10 +41,9 @@ do
 	(( totalWorkingDays++ ))
 	workingHours="$( getWorkingHours )"
 	totalWorkHrs=$(( $totalEmpHr + $workingHours ))
-	empDailyWage["$totalWorkingDays"]="$( calculateDailyWage $workingHours )"
+	empDailyWage[$totalWorkingDays]="$( calculateDailyWage $workingHours )"
 done
 	echo $totalWorkHrs
 	#calculate wages per month
 	totalSalary="$( calculateDailyWage $totalWorkHrs )"
 	echo "Daily wage  ${empDailyWage[@]}"
-	echo "All keys  ${!empDailyWage[@]}"
